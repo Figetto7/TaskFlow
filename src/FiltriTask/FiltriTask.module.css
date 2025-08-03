@@ -1,0 +1,18 @@
+.searchBar{
+  background-color:#e9ecef;
+  border:none;
+  width:70%;
+  height: 4%;
+  border-radius: 8px;
+  margin-left:5px;
+}
+
+.select{
+  background-color:#e9ecef;
+  border:none;
+  height: 4%;
+  border-radius: 8px;
+  margin-left: 20px;
+  width: 13%;
+  font-weight: lighter;
+}

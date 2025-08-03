@@ -1,0 +1,26 @@
+.title{
+  font-weight: bolder;
+  font-size:xx-large;
+}
+
+.subTitle{
+  color:gray;
+  font-weight: lighter;
+}
+
+.addTask{
+  background-color: black;
+  color:white;
+  border:none;
+  border-radius: 10px;
+  height: 40px;
+  width: 130px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.headerDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

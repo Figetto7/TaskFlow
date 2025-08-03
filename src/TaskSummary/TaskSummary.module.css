@@ -1,0 +1,60 @@
+
+
+/* Individual Stat Card */
+.statCard {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 24px;
+  flex: 0 1 calc(33.333% - 14px);
+  min-width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Card Title */
+.statTitle {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Card Number */
+.statNumber {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1;
+}
+
+.statNumberWarning {
+  color: #ef4444;
+}
+
+.statNumberCompleted {
+  color: #22c55e;
+}
+
+.statNumberTotal {
+  color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .stat-card {
+    min-width: auto;
+  }
+}

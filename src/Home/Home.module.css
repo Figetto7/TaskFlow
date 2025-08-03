@@ -1,0 +1,7 @@
+/* Task Summary Container */
+.taskSummary {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: nowrap;
+}
