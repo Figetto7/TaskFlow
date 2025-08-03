@@ -7,7 +7,7 @@ function getCurrentDate(separator="/"){
 }
 
 function getPriorityColor(priority) {
-  switch (priority) {
+  switch (priority.toLowerCase()) {
     case 'alta':
       return styles.highPriority;
     case 'media':

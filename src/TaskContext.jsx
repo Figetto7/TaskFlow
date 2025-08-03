@@ -30,6 +30,15 @@ function TaskContextProvider({ children }) {
       deadline:"2023-12-20",
       priority:"Bassa",
       isCompleted:false,
+    },
+    {
+      id:4,
+      title:"Aggiornare curriculum",
+      description:"Rivedere e aggiornare il curriculum vitae con le ultime esperienze lavorative.",
+      category:"Carriera",
+      deadline:"2026-12-31",
+      priority:"Alta",
+      isCompleted:false,
     }
   ])
 
