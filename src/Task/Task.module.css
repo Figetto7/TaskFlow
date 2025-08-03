@@ -127,6 +127,27 @@
   border: 2px solid darkred;
 }
 
+.completedTask{
+  background-color: #f8f9fa;
+  border: 2px solid #6c757d;
+  border-radius: 12px;
+  margin: 15px 0;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+
+.completedTaskTitle{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: line-through;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {

@@ -28,7 +28,10 @@ function getExpiredText (deadline, currentDate) {
   }
   return false;
 }
-function getTaskStyle (deadline){
+function getTaskStyle (deadline, isCompleted) {
+  if(isCompleted){
+    return styles.completedTask;
+  }
   if(getExpiredText(deadline, getCurrentDate())){
     return `${styles.expiredContent} ${styles.taskContainer}`;
   } else {

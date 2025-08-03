@@ -6,16 +6,16 @@ export default function Task({taskId}) {
   const {tasks, toggleTaskCompletion} = useTaskContext();
   const task = tasks.find(t => t.id === taskId)
   return (
-    <div className={getTaskStyle(task.deadline)}>
+    <div className={getTaskStyle(task.deadline, task.isCompleted)} key={task.id}>
       <div className={styles.checkboxContainer}>
         <input type="checkbox" className={styles.checkbox} onClick={()=>{toggleTaskCompletion(task.id)}} checked={task.isCompleted} />
       </div>
       
       <div className={styles.mainContent}>
         <div className={styles.titleSection}>
-          <h2 className={styles.title}>{task.title}</h2>
+          <h2 className={task.isCompleted ? styles.completedTaskTitle : styles.title}>{task.title}</h2>
           <span className={getPriorityColor(task.priority)}>{task.priority}</span>
-          {getExpiredText(task.deadline, getCurrentDate()) && (<span className={styles.expired}> ⏱︎ Scaduto</span>)}
+          { task.isCompleted === false && getExpiredText(task.deadline, getCurrentDate()) && (<span className={styles.expired}> ⏱︎ Scaduto</span>)}
         </div>
         <p className={styles.description}>{task.description}</p>
       </div>
