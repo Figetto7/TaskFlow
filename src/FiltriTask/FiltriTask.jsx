@@ -1,22 +1,47 @@
 import React from "react";
+import Select from "react-select";
 import styles from "./FiltriTask.module.css"
 
-export default function FiltriTask () {
+export default function FiltriTask ({ priorityFilter, setPriorityFilter, statusFilter, setStatusFilter, searchFilter, setSearchFilter }) {
+  const priorityOptions = [
+  { value: '', label: 'Tutte le priorità' },
+  { value: 'alta', label: 'Alta' },
+  { value: 'media', label: 'Media' },
+  { value: 'bassa', label: 'Bassa' }
+]
+  const statusOptions = [
+  { value: '', label: 'Tutti gli stati' },
+  { value: 'completed', label: 'Completati' },
+  { value: 'pending', label: 'In corso' }
+]
+
+
   return (
-    <>
-      <input  className={styles.searchBar} type="text" placeholder="    🔍︎    Cerca task..." />
-      <select className={styles.select}>
-      <option value="">Tutte le priorità</option>
-      <option value="alta">Alta</option>
-      <option value="media">Media</option>
-      <option value="bassa">Bassa</option>
-      </select>
-      <select className={styles.select}>
-      <option value="">Tutti gli stati</option>
-      <option value="in corso">In Corso</option>
-      <option value="completati">Completati</option>
-      </select>
-    </>
+    <div className={styles.filtersContainer}>
+      <input 
+        className={styles.searchBar} 
+        type="text" 
+        placeholder="🔍 Cerca task..."
+        value={searchFilter}
+        onChange={(e) => setSearchFilter(e.target.value)}
+      />
+      <Select
+      value={priorityOptions.find(option => option.value === priorityFilter)}
+      onChange={(selectedOption) => setPriorityFilter(selectedOption?.value || '')}
+      options={priorityOptions}
+      placeholder="Tutte le priorità"
+      isClearable
+      className={styles.select}
+      />
+      <Select
+      value={statusOptions.find(option => option.value === statusFilter)}
+      onChange={(selectedOption) => setStatusFilter(selectedOption?.value || '')}
+      options={statusOptions}
+      placeholder="Tutti gli stati"
+      isClearable
+      className={styles.select}
+      />
+    </div>
     
   )
 }

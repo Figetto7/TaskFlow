@@ -8,7 +8,7 @@ export default function Task({taskId}) {
   return (
     <div className={getTaskStyle(task.deadline, task.isCompleted)} key={task.id}>
       <div className={styles.checkboxContainer}>
-        <input type="checkbox" className={styles.checkbox} onClick={()=>{toggleTaskCompletion(task.id)}} checked={task.isCompleted} />
+        <input type="checkbox" className={styles.checkbox} onClick={()=>{toggleTaskCompletion(task.id)}} defaultChecked={task.isCompleted} />
       </div>
       
       <div className={styles.mainContent}>

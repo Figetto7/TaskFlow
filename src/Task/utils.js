@@ -38,5 +38,18 @@ function getTaskStyle (deadline, isCompleted) {
     return styles.taskContainer;
   }
 }
-export { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle };
+
+function getFilteredTasks(tasks, priorityFilter, statusFilter, searchFilter) {
+  if(undefined === tasks || null === tasks) {
+    return [];
+  }
+  return tasks.filter(task => {
+    const matchesPriority = !priorityFilter || task.priority.toLowerCase() === priorityFilter.toLowerCase();
+    const matchesStatus = !statusFilter || (statusFilter === 'completed' ? task.isCompleted : !task.isCompleted);
+    const matchesSearch = !searchFilter || task.title.toLowerCase().includes(searchFilter.toLowerCase());
+
+    return matchesPriority && matchesStatus && matchesSearch;
+  });
+}
+export { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle, getFilteredTasks };
 import styles from "./Task.module.css";
