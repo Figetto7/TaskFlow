@@ -28,6 +28,12 @@ function getExpiredText (deadline, currentDate) {
   }
   return false;
 }
-
-export { getCurrentDate, getPriorityColor, getExpiredText };
+function getTaskStyle (deadline){
+  if(getExpiredText(deadline, getCurrentDate())){
+    return `${styles.expiredContent} ${styles.taskContainer}`;
+  } else {
+    return styles.taskContainer;
+  }
+}
+export { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle };
 import styles from "./Task.module.css";

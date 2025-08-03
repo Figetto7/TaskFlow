@@ -1,12 +1,12 @@
 import styles from "./Task.module.css";
 import { useTaskContext } from "../TaskContext";
-import { getCurrentDate, getPriorityColor, getExpiredText } from "./utils";
+import { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle } from "./utils";
 
 export default function Task({taskId}) {
   const {tasks, toggleTaskCompletion} = useTaskContext();
   const task = tasks.find(t => t.id === taskId)
   return (
-    <div className={getExpiredText(task.deadline, getCurrentDate()) ? `${styles.expiredContent} ${styles.taskContainer}` : styles.taskContainer}>
+    <div className={getTaskStyle(task.deadline)}>
       <div className={styles.checkboxContainer}>
         <input type="checkbox" className={styles.checkbox} onClick={()=>{toggleTaskCompletion(task.id)}} checked={task.isCompleted} />
       </div>
