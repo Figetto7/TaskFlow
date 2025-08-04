@@ -12,10 +12,9 @@
 .searchBar {
   background-color: #e9ecef;
   border: none;
-  flex: 1;
-  max-width: 300px;
+  width:60%;
   height: 40px;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 0 15px;
   font-size: 14px;
   outline: none;
@@ -29,34 +28,8 @@
 }
 
 .select {
-  width: 140px;
+  width: 25%;
   flex-shrink: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-/* Stili per react-select */
-.select .react-select__control {
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  height: 40px;
-  min-height: 40px;
-  font-size: 14px;
-  box-shadow: none;
-  width:auto;
-}
-
-.select .react-select__control:hover {
-  border-color: #dee2e6;
-}
-
-.select .react-select__control--is-focused {
-  border-color: #0d6efd;
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
-}
-
-.select:focus {
-  border-color: #0d6efd;
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
