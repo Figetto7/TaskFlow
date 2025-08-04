@@ -34,9 +34,9 @@
 .sidebar :global(.ps-menu-root) {
   flex: 1 !important;
   background-color: rgb(248, 247, 247) !important;
-  border-right: 1px solid black;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
   margin: 0 !important; /* AGGIUNTO: rimuove margini */
-  padding: 0 !important; /* AGGIUNTO: rimuove padding */
+  padding: 10px !important; /* AGGIUNTO: rimuove padding */
 }
 
 /* AGGIUNTO: rimuove margini dai singoli menu item */
@@ -71,8 +71,8 @@
   align-items: center;
   padding: 20px;
   gap: 15px; 
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
   margin-bottom: 0; /* CAMBIATO: da 20px a 0 per eliminare gap */
   flex-shrink: 0;
   background-color: rgb(248, 247, 247);
@@ -94,8 +94,8 @@
   margin-top: auto;
   padding: 20px;
   text-align: center;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
   color: black;
   flex-shrink: 0;
   background-color: rgb(248, 247, 247);

@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './AddTask.module.css'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import NewTaskForm from "../NewTaskForm/NewTaskForm";
 
 
@@ -11,8 +11,9 @@ export default function AddTask (){
   return (
     <>
       <div className={styles.addTaskHeader}>
-      <button className={styles.backButtonHome} onClick={() => navigate('/')}> <FontAwesomeIcon icon={faArrowLeft} /> Torna alla Home</button>
+      
       <h1 className={styles.AddTasktitle}>Nuovo Task</h1>
+      <button className={styles.backButtonHome} onClick={() => navigate('/')}> Torna alla Home  <FontAwesomeIcon icon={faArrowRight} /></button>
       <p className={styles.AddTasksubtitle}>Crea un nuovo task per organizzare meglio il tuo lavoro</p>
     </div>
     <NewTaskForm />

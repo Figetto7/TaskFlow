@@ -1,6 +1,6 @@
 import styles from "./Task.module.css";
 import { useTaskContext } from "../TaskContext";
-import { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle } from "./utils";
+import { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle, formatDate } from "./utils";
 
 export default function Task({taskId}) {
   const {tasks, toggleTaskCompletion} = useTaskContext();
@@ -22,7 +22,7 @@ export default function Task({taskId}) {
       
       <div className={styles.detailsContainer}>
         <p className={styles.detail}>Categoria: {task.category}</p>
-        <p className={styles.detail}>Scadenza: {task.deadline}</p>
+        <p className={styles.detail}>Scadenza: {formatDate(task.deadline)}</p>
         <p className={styles.detail}>Creato: {getCurrentDate()}</p>
       </div>
     </div>

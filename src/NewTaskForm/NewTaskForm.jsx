@@ -27,7 +27,7 @@ export default function NewTaskForm() {
   ];
 
  const getCustomStyles = (hasError) => ({
-  control: (provided, state) => ({
+  control: (provided) => ({
     ...provided,
     borderRadius: '10px',
     height: '40px',

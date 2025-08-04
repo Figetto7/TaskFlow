@@ -1,8 +1,9 @@
 .addTaskHeader {
 max-width: 600px;
-margin: 0 auto;
-padding: 40px 20px;
+align-self: center;
+padding: 10px 20px;
 text-align: left;
+display:grid;
 }
 
 .backButtonHome {
@@ -17,6 +18,7 @@ padding: 8px 12px;
 border-radius: 6px;
 border:none;
 background-color: white;
+grid-row: 1;
 }
 
 .backButtonHome:hover {
@@ -31,6 +33,7 @@ font-size: 32px;
 font-weight: 600;
 color: black;
 margin: 0 0 8px 0;
+grid-row: 1;
 }
 
 .AddTasksubtitle {
@@ -38,4 +41,5 @@ font-size: 16px;
 color: gray;
 margin: 0;
 line-height: 1.5;
+grid-row: 2;
 }

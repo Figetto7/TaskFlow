@@ -6,6 +6,11 @@ function getCurrentDate(separator="/"){
   return `${date.toString().padStart(2, '0')}${separator}${month.toString().padStart(2, '0')}${separator}${year}`;
 }
 
+function formatDate(isoDate) {
+  const [year, month, day] = isoDate.split("-");
+  return `${day}/${month}/${year}`;
+}
+
 function getPriorityColor(priority) {
   switch (priority.toLowerCase()) {
     case 'alta':
@@ -51,5 +56,5 @@ function getFilteredTasks(tasks, priorityFilter, statusFilter, searchFilter) {
     return matchesPriority && matchesStatus && matchesSearch;
   });
 }
-export { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle, getFilteredTasks };
+export { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle, getFilteredTasks, formatDate };
 import styles from "./Task.module.css";
