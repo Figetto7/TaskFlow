@@ -21,7 +21,7 @@ export default function Home() {
       <div className={styles.taskSummary}>
       <TaskSummary title="Task Totali" number={filteredTasks.length} flag="T"/>
       <TaskSummary title="Completati" number={filteredTasks.filter(task => task.isCompleted).length} flag="C" />
-      <TaskSummary title="In scadenza" number={filteredTasks.filter(task => !task.isCompleted && getExpiredText(task.deadline, getCurrentDate())).length} flag="S"/>
+      <TaskSummary title="Scaduti" number={filteredTasks.filter(task => !task.isCompleted && getExpiredText(task.deadline, getCurrentDate())).length} flag="S"/>
       </div>
       <FiltriTask 
       priorityFilter={priorityFilter}

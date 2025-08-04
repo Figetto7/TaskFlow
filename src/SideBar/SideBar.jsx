@@ -11,8 +11,13 @@ export default function SideBar() {
   return (
     <Sidebar className={styles.sidebar}>
       <div className={styles.logo}>
-        <h1><FontAwesomeIcon icon={faCircleCheck} /> TaskFlow</h1>
+        <div className={styles.logoIcon}>
+          <FontAwesomeIcon icon={faCircleCheck} />
+        </div>
+        <div className={styles.logoText}>
+        <h1>TaskFlow</h1>
         <p>Gestione Task</p>
+        </div>
       </div>
       <Menu>
         <MenuItem active={location.pathname === '/'} component={<Link to="/" />}>
