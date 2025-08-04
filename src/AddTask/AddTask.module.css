@@ -1,0 +1,41 @@
+.addTaskHeader {
+max-width: 600px;
+margin: 0 auto;
+padding: 40px 20px;
+text-align: left;
+}
+
+.backButtonHome {
+display: flex;
+align-items: center;
+gap: 8px;
+color: #666;
+text-decoration: none;
+font-size: 14px;
+margin-bottom: 16px;
+padding: 8px 12px;
+border-radius: 6px;
+border:none;
+background-color: white;;
+}
+
+.backButtonHome:hover {
+background-color:rgb(234, 233, 233);
+color: black;
+
+transition: background-color 0.2s ease;
+}
+
+.AddTasktitle {
+font-size: 32px;
+font-weight: 600;
+color: black;
+margin: 0 0 8px 0;
+}
+
+.AddTasksubtitle {
+font-size: 16px;
+color: gray;
+margin: 0;
+line-height: 1.5;
+}
