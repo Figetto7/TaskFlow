@@ -10,16 +10,19 @@ import './App/App.css'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <div style={{ display: 'flex', minHeight: '100vh' }}>
-        <SideBar />
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <main style={{ flex: 1, padding: '20px' }}>
-            <TaskContextProvider>
-              <App />
-            </TaskContextProvider>
-          </main>
-          <Footer />
-        </div>
+      <SideBar />
+      <div style={{ 
+        marginLeft: '280px', // Compensa la larghezza della sidebar fissa
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column'
+      }}>
+        <main style={{ flex: 1, padding: '20px' }}>
+          <TaskContextProvider>
+            <App />
+          </TaskContextProvider>
+        </main>
+        <Footer />
       </div>
     </BrowserRouter>
   </StrictMode>,

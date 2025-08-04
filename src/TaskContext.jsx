@@ -4,42 +4,7 @@ const TaskContext = React.createContext();
 
 function TaskContextProvider({ children }) {
   const [tasks, setTasks] = React.useState([
-    {
-      id:1,
-      title:"Completare presentazione Q4",
-      description:"Preparare la presentazione dei risultati del quarto trimestre per il meeting con il management.",
-      category:"Lavoro",
-      deadline:"2023-12-15",
-      priority:"Alta",
-      isCompleted:false,
-    },
-    {
-      id:2,
-      title:"Organizzare riunione team",
-      description:"Pianificare una riunione con il team per discutere i progressi del progetto.",
-      category:"Lavoro",
-      deadline:"2023-12-10",
-      priority:"Media",
-      isCompleted:false,
-    },
-    {
-      id:3,
-      title:"Comprare regali di Natale",
-      description:"Acquistare regali per la famiglia e gli amici in vista delle festività.",
-      category:"Personale",
-      deadline:"2023-12-20",
-      priority:"Bassa",
-      isCompleted:false,
-    },
-    {
-      id:4,
-      title:"Aggiornare curriculum",
-      description:"Rivedere e aggiornare il curriculum vitae con le ultime esperienze lavorative.",
-      category:"Carriera",
-      deadline:"2026-12-31",
-      priority:"Alta",
-      isCompleted:false,
-    }
+    
   ])
 
   function addTask (newTask) {

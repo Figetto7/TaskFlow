@@ -3,16 +3,16 @@ import { Link, useLocation } from 'react-router-dom'
 import styles from "./SideBar.module.css"
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faPlus, faChartSimple, faInfo, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faPlus, faChartSimple, faInfo } from '@fortawesome/free-solid-svg-icons';
 
 export default function SideBar() {
   const location = useLocation();
   
   return (
-    <Sidebar className={styles.sidebar}>
+    <Sidebar className={styles.sidebar} >
       <div className={styles.logo}>
         <div className={styles.logoIcon}>
-          <FontAwesomeIcon icon={faCircleCheck} />
+          <img src="/public/favicon-32x32.png" alt="TaskFlow Logo" style={{width: '24px', height: '24px'}} />
         </div>
         <div className={styles.logoText}>
         <h1>TaskFlow</h1>
