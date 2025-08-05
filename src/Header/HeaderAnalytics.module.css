@@ -1,0 +1,15 @@
+.title{
+  font-weight: bolder;
+  font-size:xx-large;
+}
+
+.subTitle{
+  color:gray;
+  font-weight: lighter;
+}
+
+.headerDiv{
+  justify-content: space-between;
+  align-items: center;
+  margin:10px;
+}
