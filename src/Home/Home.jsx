@@ -3,7 +3,7 @@ import TaskSummary from "../TaskSummary/TaskSummary";
 import HeaderHome from "../Header/HeaderHome";
 import FiltriTask from "../FiltriTask/FiltriTask"
 import Task from "../Task/Task"
-import { getCurrentDate, getExpiredText, getFilteredTasks } from "../../utils";
+import { getFilteredTasks, getExpiredTasks } from "../../utils";
 import { useTaskContext } from "../TaskContext";
 import styles from "./Home.module.css";
 
@@ -13,6 +13,7 @@ export default function Home() {
   const [statusFilter, setStatusFilter] = React.useState('');
   const [searchFilter, setSearchFilter] = React.useState('');
   const filteredTasks = getFilteredTasks(tasks, priorityFilter, statusFilter, searchFilter);
+  
 
   return (
 
@@ -21,7 +22,7 @@ export default function Home() {
       <div className={styles.taskSummary}>
       <TaskSummary title="Task Totali" number={filteredTasks.length} flag="T"/>
       <TaskSummary title="Completati" number={filteredTasks.filter(task => task.isCompleted).length} flag="C" />
-      <TaskSummary title="Scaduti" number={filteredTasks.filter(task => !task.isCompleted && getExpiredText(task.deadline, getCurrentDate())).length} flag="S"/>
+      <TaskSummary title="Scaduti" number={getExpiredTasks(filteredTasks)} flag="S"/>
       </div>
       <FiltriTask 
       priorityFilter={priorityFilter}
@@ -36,4 +37,6 @@ export default function Home() {
     </>
   )
 }
+
+
     

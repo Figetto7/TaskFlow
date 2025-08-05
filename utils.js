@@ -103,8 +103,11 @@ function getPerfomanceText(tasks) {
     return "Dai ce la puoi fare"
   }
 }
-
+function getExpiredTasks (tasks){
+  const expiredTasks = tasks.filter(task => !task.isCompleted && getExpiredText(task.deadline, getCurrentDate())).length;
+  return expiredTasks;
+}
 export { getCurrentDate, getPriorityColor, getExpiredText, 
         getTaskStyle, getFilteredTasks, formatDate, getMostActiveCategory, 
-        getMostActivePriority, getPerfomanceText };
+        getMostActivePriority, getPerfomanceText, getExpiredTasks };
 import styles from "./src/Task/Task.module.css";
