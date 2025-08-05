@@ -1,0 +1,41 @@
+.InsightsDescriptionBlue{
+  border: 1px solid rgb(0, 0, 255, 0.5);
+  width:30%;
+  height: 4rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  color:darkblue;
+  border-radius: 7px;
+  background-color: rgba(25, 25, 163, 0.1);
+}
+.InsightsDescriptionBlueP{
+  padding-top: 0.3rem;
+  color:blue;
+}
+
+
+.InsightsDescriptionGreen{
+  border: 1px solid rgba(6, 71, 6, 0.56);
+  width:30%;
+  height: 4rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  color:darkgreen;
+  border-radius: 7px;
+  background-color: rgba(38, 177, 80, 0.1);
+}
+.InsightsDescriptionGreenP{
+  padding-top: 0.3rem;
+  color:green;
+}
+
+.InsightsDescriptionRed{
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  width:30%;
+  height: 4rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  color:darkred;
+  border-radius: 7px;
+  background-color: rgba(255, 0, 0, 0.1);
+}

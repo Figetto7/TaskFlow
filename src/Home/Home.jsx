@@ -3,7 +3,7 @@ import TaskSummary from "../TaskSummary/TaskSummary";
 import HeaderHome from "../Header/HeaderHome";
 import FiltriTask from "../FiltriTask/FiltriTask"
 import Task from "../Task/Task"
-import { getCurrentDate, getExpiredText, getFilteredTasks } from "../Task/utils";
+import { getCurrentDate, getExpiredText, getFilteredTasks } from "../../utils";
 import { useTaskContext } from "../TaskContext";
 import styles from "./Home.module.css";
 

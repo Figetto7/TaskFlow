@@ -57,4 +57,4 @@ function getFilteredTasks(tasks, priorityFilter, statusFilter, searchFilter) {
   });
 }
 export { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle, getFilteredTasks, formatDate };
-import styles from "./Task.module.css";
+import styles from "./src/Task/Task.module.css";
