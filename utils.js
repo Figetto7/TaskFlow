@@ -56,5 +56,55 @@ function getFilteredTasks(tasks, priorityFilter, statusFilter, searchFilter) {
     return matchesPriority && matchesStatus && matchesSearch;
   });
 }
-export { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle, getFilteredTasks, formatDate };
+
+function getMostActiveCategory(tasks) {
+  if (!tasks || tasks.length === 0) {
+    return ["", 0];
+  }
+  const categoryCount = tasks.reduce((acc, task) => {
+    acc[task.category] = (acc[task.category] || 0) + 1;
+    return acc;
+  }, {});
+
+  return Object.entries(categoryCount).reduce((max, current) => {
+    return current[1] > max[1] ? current : max;
+  }, ["", 0]);
+}
+
+function getMostActivePriority(tasks) {
+  if (!tasks || tasks.length === 0) {
+    return ["", 0];
+  }
+  const priorityCount = tasks.reduce((acc, task) => {
+    acc[task.priority] = (acc[task.priority] || 0) + 1;
+    return acc;
+  }, {});
+
+  return Object.entries(priorityCount).reduce((max, current) => {
+    return current[1] > max[1] ? current : max;
+  }, ["", 0]);
+}
+
+function getPerfomanceText(tasks) {
+  if (tasks.length === 0) return "Nessuna task inserita";
+  const completed = tasks.filter(task => task.isCompleted).length;
+  const percent = (completed / tasks.length) * 100;
+  if (percent === 0){
+    return "Zero task completate. Si parte da zero."
+  } else if (percent <= 25){
+    return "Poco fatto, ma ce la puoi fare."
+  } else if (percent <= 50){
+    return "Metà strada, non mollare."
+  } else if (percent < 100){
+    return "Quasi lì, tieni duro."
+  } else if (percent === 100){
+    return "Fatto! Complimenti."
+  } else {
+    return "Dai ce la puoi fare"
+  }
+}
+
+export { getCurrentDate, getPriorityColor, getExpiredText, 
+        getTaskStyle, getFilteredTasks, formatDate, getMostActiveCategory, 
+        getMostActivePriority, getPerfomanceText };
 import styles from "./src/Task/Task.module.css";
