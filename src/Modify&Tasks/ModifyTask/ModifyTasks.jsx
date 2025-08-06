@@ -24,9 +24,10 @@ export default function ModifyTasks() {
       setStatusFilter={setStatusFilter}
       searchFilter={searchFilter}
       setSearchFilter={setSearchFilter}
+      use="modify"
       />
       <div className={styles.modifyTasksList}>
-        {filteredTasks.map(task => (<Task key={task.id} taskId={task.id} use="home" />))}
+        {filteredTasks.map(task => (<Task key={task.id} taskId={task.id} use="modify" />))}
       </div>
     </div>
   )

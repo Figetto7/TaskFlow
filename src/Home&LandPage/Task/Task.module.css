@@ -7,7 +7,7 @@
   padding: 20px;
   display: flex;
   align-items: flex-start;
-  gap: 15px;
+  gap: 10px;
   transition: all 0.2s ease;
 }
 
@@ -138,6 +138,36 @@
   gap: 15px;
   transition: all 0.2s ease;
   opacity: 0.6;
+}
+.modifyTaskContainer{
+  background-color: #f8f9fa;
+  border: 2px solid #6c757d;
+  border-radius: 12px;
+  margin: 15px 0;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.modifyTaskContainer:hover, .modifyCompletedTask:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.modifyCompletedTask{
+  background-color: rgb(241, 194, 194);
+  border: 2px solid darkred;
+  border-radius: 12px;
+  margin: 15px 0;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: all 0.2s ease;
+  cursor:pointer;
 }
 
 .completedTaskTitle{

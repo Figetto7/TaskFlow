@@ -1,15 +1,23 @@
 import styles from "./Task.module.css";
 import { useTaskContext } from "../../Context/TaskContext";
 import { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle, formatDate } from "../../../utils";
+import ModifyTaskModal from "../../Modify&Tasks/ModifyTask/ModifyTaskModal/ModifyTaskModal";
+import React, { useState } from "react";
 
 export default function Task({taskId, use}) {
-
+  const [showModal, setShowModal] = useState(false);
+  const handleClick = () => {
+    if (use === "modify") {
+      setShowModal(true);
+    }
+  };
   const {tasks, toggleTaskCompletion} = useTaskContext();
   const task = tasks.find(t => t.id === taskId)
   return (
-    <div className={getTaskStyle(task.deadline, task.isCompleted)} key={task.id}>
+    <div className={getTaskStyle(task.deadline, task.isCompleted, use)} key={task.id} onClick={handleClick}> 
+      {showModal && <ModifyTaskModal task={task} onClose={() => setShowModal(false)} onSave={() => {}} />}
       <div className={styles.checkboxContainer}>
-        <input type="checkbox" className={styles.checkbox} onClick={()=>{use === "modify" ? null : toggleTaskCompletion(task.id)}} defaultChecked={task.isCompleted} />
+        {use === "home" && <input type="checkbox" className={styles.checkbox} onClick={()=>{ toggleTaskCompletion(task.id)}} defaultChecked={task.isCompleted} />}
       </div>
       
       <div className={styles.mainContent}>

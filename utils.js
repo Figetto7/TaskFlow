@@ -33,7 +33,14 @@ function getExpiredText (deadline, currentDate) {
   }
   return false;
 }
-function getTaskStyle (deadline, isCompleted) {
+function getTaskStyle (deadline, isCompleted, use) {
+  if(use === "modify") {
+    if(isCompleted){
+      return styles.modifyCompletedTask;
+    } else {
+      return styles.modifyTaskContainer;
+    }
+  }
   if(isCompleted){
     return styles.completedTask;
   }
