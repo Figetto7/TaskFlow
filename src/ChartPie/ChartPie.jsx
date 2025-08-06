@@ -46,7 +46,7 @@ export default function MyPieChart() {
   ].filter(item => item.value > 0);
 
   return (
-    <div className={styles.pieChartContainer}>
+    <>
       <div className={styles.pieChartHeader}>
         <h1>Stato Task</h1>
         <p>Distribuzione per stato di completamento</p>
@@ -71,6 +71,6 @@ export default function MyPieChart() {
           ))}
         </Pie>
       </PieChart>
-    </div>
+    </>
   );
 }

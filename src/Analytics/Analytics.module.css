@@ -1,0 +1,15 @@
+.StatisticsContainer{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.analyticsNumberTaskContainer{
+  display:flex;
+  gap: 2rem;
+}
