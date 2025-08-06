@@ -3,7 +3,7 @@ import styles from './AddTask.module.css'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import NewTaskForm from "../NewTaskForm/NewTaskForm";
+import NewTaskForm from "./NewTaskForm/NewTaskForm";
 
 
 export default function AddTask (){

@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderAnalytics from "../HeaderAnalytics"
+import HeaderAnalytics from "./HeaderAnalytics/HeaderAnalytics"
 import Insights from "../Insights/Insights"
 import ChartPie from "../ChartPie/ChartPie"
 import Histogram from "../Histogram/Histogram"

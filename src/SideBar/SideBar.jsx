@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import styles from "./SideBar.module.css"
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faPlus, faChartSimple, faInfo } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faPlus, faChartSimple, faInfo, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function SideBar() {
   const location = useLocation();
@@ -26,12 +26,16 @@ export default function SideBar() {
         <MenuItem active={location.pathname === '/AddTask'} component={<Link to="/AddTask" />}>
           <FontAwesomeIcon icon={faPlus} /> Aggiungi Task
         </MenuItem>
+        <MenuItem active={location.pathname === '/ModifyTask'} component={<Link to="/ModifyTask" />}>
+          <FontAwesomeIcon icon={faPenToSquare} /> Modifica Task
+        </MenuItem>
         <MenuItem active={location.pathname === '/analytics'} component={<Link to="/analytics" />}>
           <FontAwesomeIcon icon={faChartSimple} /> Analytics
         </MenuItem>
         <MenuItem active={location.pathname === '/about'} component={<Link to="/about" />}>
           <FontAwesomeIcon icon={faInfo} /> About
         </MenuItem>
+        
       </Menu>
       <div className={styles.bottomElement}>
         <p> V 1.00</p>
