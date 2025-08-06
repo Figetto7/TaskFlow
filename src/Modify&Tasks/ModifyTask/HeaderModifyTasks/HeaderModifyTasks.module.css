@@ -1,0 +1,9 @@
+.HeaderTitle{
+  font-weight: bolder;
+  font-size:xx-large;
+}
+
+.HeaderSubtitle{
+  color:gray;
+  font-weight: lighter;
+}

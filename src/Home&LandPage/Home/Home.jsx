@@ -32,7 +32,7 @@ export default function Home() {
       searchFilter={searchFilter}
       setSearchFilter={setSearchFilter}
       />
-      {filteredTasks.map(task => (<Task key={task.id} taskId={task.id} />))}
+      {filteredTasks.map(task => (<Task key={task.id} taskId={task.id} use="home" />))}
 
     </>
   )
