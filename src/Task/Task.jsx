@@ -1,5 +1,5 @@
 import styles from "./Task.module.css";
-import { useTaskContext } from "../TaskContext";
+import { useTaskContext } from "../Context/TaskContext";
 import { getCurrentDate, getPriorityColor, getExpiredText, getTaskStyle, formatDate } from "../../utils";
 
 export default function Task({taskId}) {

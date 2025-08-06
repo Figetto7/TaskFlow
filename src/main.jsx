@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import SideBar from "./SideBar/SideBar"
 import Footer from "./Footer/Footer"
 import App from './App/App'
-import TaskContextProvider from "./TaskContext"
+import TaskContextProvider from "./Context/TaskContext"
 import './App/App.css'
 
 createRoot(document.getElementById('root')).render(
