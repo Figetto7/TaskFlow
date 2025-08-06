@@ -1,0 +1,25 @@
+.aboutLogo{
+  width:5rem;
+  height:5rem;
+  margin: auto;
+}
+
+.aboutTitle{
+  margin: auto;
+  padding-top: 1.5rem;
+  font-size: 4rem;
+  font-weight: lighter;
+}
+
+.aboutDescription{
+  color:gray;
+  font-weight: lighter;
+  margin:auto;
+  text-align: center;
+}
+
+.aboutFeaturesTitle{
+  margin:auto;
+  padding-top: 1.5rem;
+  font-size: 2rem;
+}
