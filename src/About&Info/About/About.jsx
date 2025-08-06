@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './About.module.css'
 import Functionality from "../Functionality/Functionality"
-import HeaderAbout from "../Header/HeaderAbout"
+import HeaderAbout from "./HeaderAbout/HeaderAbout";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCheckCircle, faBullseye, faChartBar, faBolt, faShieldAlt,faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 

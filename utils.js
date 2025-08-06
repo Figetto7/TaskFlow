@@ -110,4 +110,4 @@ function getExpiredTasks (tasks){
 export { getCurrentDate, getPriorityColor, getExpiredText, 
         getTaskStyle, getFilteredTasks, formatDate, getMostActiveCategory, 
         getMostActivePriority, getPerfomanceText, getExpiredTasks };
-import styles from "./src/Task/Task.module.css";
+import styles from "./src/Home&LandPage/Task/Task.module.css";

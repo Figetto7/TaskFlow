@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./NewTaskForm.module.css";
 import { useForm, Controller } from 'react-hook-form';
 import Select from "react-select";
-import { useTaskContext } from "../Context/TaskContext"
+import { useTaskContext } from "../../Context/TaskContext";
 
 export default function NewTaskForm() {
   const { addTask } = useTaskContext();

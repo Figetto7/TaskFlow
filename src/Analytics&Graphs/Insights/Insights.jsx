@@ -1,8 +1,8 @@
 import styles from './Insights.module.css'
 import React from 'react'
 import InsightsDescription from "../InsightDescription/InsightDescription"
-import { getMostActiveCategory, getMostActivePriority, getPerfomanceText } from "../../utils";
-import { useTaskContext } from "../Context/TaskContext";
+import { getMostActiveCategory, getMostActivePriority, getPerfomanceText } from "../../../utils";
+import { useTaskContext } from "../../Context/TaskContext";
 
 
 

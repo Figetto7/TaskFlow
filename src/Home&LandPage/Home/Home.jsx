@@ -1,10 +1,10 @@
 import React from "react";
 import TaskSummary from "../TaskSummary/TaskSummary";
-import HeaderHome from "../Header/HeaderHome";
+import HeaderHome from "./HeaderHome/HeaderHome";
 import FiltriTask from "../FiltriTask/FiltriTask"
 import Task from "../Task/Task"
-import { getFilteredTasks, getExpiredTasks } from "../../utils";
-import { useTaskContext } from "../Context/TaskContext";
+import { getFilteredTasks, getExpiredTasks } from "../../../utils";
+import { useTaskContext } from "../../Context/TaskContext";
 import styles from "./Home.module.css";
 
 export default function Home() {

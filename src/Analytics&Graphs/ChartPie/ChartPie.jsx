@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ChartPie.module.css";
 import { PieChart, Pie, Cell } from "recharts";
-import { useTaskContext } from "../Context/TaskContext";
-import { getExpiredTasks } from "../../utils";
+import { useTaskContext } from "../../Context/TaskContext";
+import { getExpiredTasks } from "../../../utils";
 
 const COLORS = ["#3b82f6", "#10b981", "#ef4444"];
 
