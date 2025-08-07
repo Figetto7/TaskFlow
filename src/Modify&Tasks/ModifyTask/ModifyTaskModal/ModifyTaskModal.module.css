@@ -49,16 +49,22 @@
   font-size: 1rem;
   padding: 0.5rem;
   align-self: flex-end;
-  margin-left: 15rem;
-  width:15%;
+  width:5rem;
+  position:fixed;
+  left:70%;
 }
 .modalTaskFormCancel:hover{
   transform: scale(1.05);
   transition: transform 0.2s ease-in-out;
 }
+.modalFormErrorMessage {
+  color: red;
+  font-weight: bold;
+}
 .modalTaskFormTitle{
   color:black;
   font-weight: bolder;
+  font-size: x-large;
 }
 
 .modalFormSubtitle{
@@ -96,7 +102,7 @@
 }
 
 .modalTaskFormModifyButton{
-  background-color: darkgreen;
+  background-color: black;
   color:white;
   border:none;
   width:50%;
@@ -122,4 +128,53 @@
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+}
+
+.modalTaskFormInputError,
+.modalTaskFormTextAreaError {
+  border: 2px solid red !important;
+  outline: none !important;
+}
+
+.confirmCancellationButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.confirmCancellationHeader{
+  margin-bottom: 1rem;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  height: 5rem;
+}
+
+.confirmCancellationTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.confirmCancellationMessage {
+  font-size: 1rem;
+  color: gray;
+}
+
+.confirmCancellationButton {
+  background-color: darkred;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50%;
+}
+.dismissCancellationButton{
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50%;
 }

@@ -3,9 +3,24 @@ import Modal from "react-modal";
 import { useForm, Controller } from "react-hook-form";
 import { priorityOptions, categoryOptions } from "../../../Context/TestTasks";
 import Select from "react-select";
+import { useTaskContext } from "../../../Context/TaskContext";
+import React from "react";
 export default function ModifyTaskModal({ task, onClose, onSave }) {
+  const { updateTask, deleteTask } = useTaskContext();
+  const [showConfirmDelete, setShowConfirmDelete] = React.useState(false);
+  const onSubmit = (data) => {
+    const modifiedTask = {
+      ...task,
+      title: data.titolo,
+      description: data.descrizione,
+      priority: data.priorita,
+      category: data.categoria,
+      deadline: data.dataScadenza
+    };
+    updateTask(modifiedTask);
+    onClose();
+  }
    const {
-  reset,
   register,
   handleSubmit,
   control,
@@ -45,20 +60,22 @@ export default function ModifyTaskModal({ task, onClose, onSave }) {
     <Modal isOpen={true} onRequestClose={onClose} shouldCloseOnOverlayClick={true} 
             ariaHideApp={false} className={styles.modalContent} 
             overlayClassName={styles.modalOverlay} style={{outline: 'none', border: 'none'}}>
-        <form  className={styles.modalForm}>
-      <div style={{ display: 'flex', gap:' 40%', alignItems: 'center' }}>
-        <h2 className={styles.modalTaskFormTitle}>Modifica Task</h2>
+        <form  className={styles.modalForm} onSubmit={handleSubmit(onSubmit)}>
+      <div style={{ display: 'flex', gap:' 17%', alignItems: 'center' }}>
+        <h2 className={styles.modalTaskFormTitle}>Modifica Task </h2>
+        {hasError && <span className={styles.modalFormErrorMessage}>I campi in rosso sono obbligatori</span>}
         <button type="button" className={styles.modalTaskFormCancel} onClick={onClose}>Chiudi</button>
       </div>
       <p className={styles.modalFormSubtitle}>Moficica tutti i dati necessari per aggiornare il tuo task</p>
+      
       <label htmlFor='titolo' className={styles.modalFormTitleTask}>Titolo *</label>
       <input {...register("titolo", { required: true })}  id="titolo" 
-      className={errors.titolo ? `${styles.modalTaskFormInput } ${styles.addTaskFormError}` : styles.modalTaskFormInput } />
+      className={errors.titolo ? `${styles.modalTaskFormInput } ${styles.modalTaskFormInputError}` : styles.modalTaskFormInput } />
       
 
       <label htmlFor='descrizione' className={styles.modalFormTitleTask}>Descrizione *</label>
       <textarea {...register("descrizione", { required: true })} id="descrizione" 
-      className={errors.descrizione ? `${styles.modalTaskFormTextArea} ${styles.addTaskFormError}` : styles.modalTaskFormTextArea}></textarea>
+      className={errors.descrizione ? `${styles.modalTaskFormTextArea} ${styles.modalTaskFormTextAreaError}` : styles.modalTaskFormTextArea}></textarea>
 
       <label htmlFor='priorita' className={styles.modalFormTitleTask}>Priorità *</label>
       <Controller
@@ -96,13 +113,37 @@ export default function ModifyTaskModal({ task, onClose, onSave }) {
 />
       <label htmlFor='dataScadenza' className={styles.modalFormTitleTask}>Data di Scadenza *</label>
       <input type="date" {...register("dataScadenza", { required: true })} id="dataScadenza" 
-              className={errors.dataScadenza ? `${styles.modalTaskFormInput} ${styles.addTaskFormError}` : styles.modalTaskFormInput}
+              className={errors.dataScadenza ? `${styles.modalTaskFormInput} ${styles.modalTaskFormInputError}` : styles.modalTaskFormInput}
  />
       <div className={styles.modalTaskFormButtons}>
-        <button type="submit" className={styles.modalTaskFormModifyButton}>Modifica Task</button>
-        <button type="button" className={styles.modalTaskFormCancelTaskButton} >Cancella Task</button>
+        <button type="submit" className={styles.modalTaskFormModifyButton} >Modifica Task</button>
+        <button type="button" className={styles.modalTaskFormCancelTaskButton} onClick={() => setShowConfirmDelete(true)} >Cancella Task</button>
       </div>
     </form>
+    {showConfirmDelete && (
+   <Modal
+    isOpen={true}
+    onRequestClose={() => setShowConfirmDelete(false)}
+    className={styles.modalContent}
+    overlayClassName={styles.modalOverlay}>
+    <div className={styles.confirmCancellationHeader}>
+      <h3 className={styles.confirmCancellationTitle}>Conferma eliminazione</h3>
+      <p className={styles.confirmCancellationMessage}>Sei sicuro di voler eliminare questa task?</p>
+    </div>
+    <div className={styles.confirmCancellationButtons}>
+      <button onClick={() => setShowConfirmDelete(false)} className={styles.dismissCancellationButton}>Annulla</button>
+      <button onClick={() => {
+        deleteTask(task.id);
+        setShowConfirmDelete(false);
+        onClose();
+
+      }} className={styles.confirmCancellationButton}>
+        Elimina
+      </button>
+      
+    </div>
+  </Modal>
+)}
     </Modal>
   )
 }
