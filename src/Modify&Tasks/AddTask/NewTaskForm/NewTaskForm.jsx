@@ -3,28 +3,12 @@ import styles from "./NewTaskForm.module.css";
 import { useForm, Controller } from 'react-hook-form';
 import Select from "react-select";
 import { useTaskContext } from "../../../Context/TaskContext";
+import { priorityOptions, categoryOptions } from "../../../Context/TestTasks";
 
 export default function NewTaskForm() {
   const { addTask } = useTaskContext();
 
-  const priorityOptions = [
-    { value: '', label: 'Tutte le priorità' },
-    { value: 'alta', label: 'Alta' },
-    { value: 'media', label: 'Media' },
-    { value: 'bassa', label: 'Bassa' }
-  ];
 
-  const categoryOptions = [
-    { value: '', label: 'Tutte le categorie' },
-    { value: 'lavoro', label: 'Lavoro' },
-    { value: 'personale', label: 'Personale' },
-    { value: 'studio', label: 'Studio' },
-    { value: 'casa', label: 'Casa' },
-    { value: 'salute', label: 'Salute' },
-    { value: 'finanze', label: 'Finanze' },
-    { value: 'shopping', label: 'Shopping' },
-    { value: 'altro', label: 'Altro' }
-  ];
 
  const getCustomStyles = (hasError) => ({
   control: (provided) => ({

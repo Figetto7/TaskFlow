@@ -96,4 +96,22 @@ const testTasks = [
     isCompleted: false,
   }
 ];
-export default testTasks;
+  export const priorityOptions = [
+    { value: '', label: 'Tutte le priorità' },
+    { value: 'alta', label: 'Alta' },
+    { value: 'media', label: 'Media' },
+    { value: 'bassa', label: 'Bassa' }
+  ];
+
+  export const categoryOptions = [
+    { value: '', label: 'Tutte le categorie' },
+    { value: 'lavoro', label: 'Lavoro' },
+    { value: 'personale', label: 'Personale' },
+    { value: 'studio', label: 'Studio' },
+    { value: 'casa', label: 'Casa' },
+    { value: 'salute', label: 'Salute' },
+    { value: 'finanze', label: 'Finanze' },
+    { value: 'shopping', label: 'Shopping' },
+    { value: 'altro', label: 'Altro' }
+  ];
+export default  testTasks

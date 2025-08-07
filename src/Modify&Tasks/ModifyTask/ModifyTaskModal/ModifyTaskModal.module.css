@@ -23,20 +23,105 @@
 }
 
 
-.modalHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.closeButton {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .modalFormContainer{
   width: 100%;
+}
+
+.addTaskForm{
+  border: 1px solid #ccc;
+  display:grid;
+  width:60%;
+  height: 70%;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  gap:10px;
+  background-color: white;
+}
+
+.addTaskFormSubtitle{
+  color:gray;
+  font-weight:lighter;
+}
+
+.addTaskFormLabel{
+  color:black;
+  font-weight: bold;
+}
+
+.addTaskFormTitle{
+  color:black;
+  font-weight: bolder;
+}
+
+.addTaskFormInput{
+  border-radius: 10px;
+  font-weight: lighter;
+  border: 1px solid #dee2e6;
+  box-shadow: none;
+  height: 40px;
+  min-height: 40px;
+  background-color: #e9ecef;
+}
+
+.addTaskFormInput::placeholder{
+  color: #6c757d;
+}
+.addTaskFormInput:active, .addTaskFormInput:focus, .addTaskFormTextarea:active, .addTaskFormTextarea:focus{
+  outline: none;
+  border: 2px solid black;
+}
+
+.addTaskFormTextarea{
+  border-radius: 10px;
+  font-weight: lighter;
+  border: 1px solid #dee2e6;
+  box-shadow: none;
+  height: 40px;
+  min-height: 40px;
+  background-color: #e9ecef;
+  width: 100%;       
+  height: 70px;      
+  resize: none;       
+  overflow-y: auto;
+}
+
+.addTaskFormTextarea::placeholder{
+  color: #6c757d;
+}
+
+.addTaskFormButtons{
+  display:flex;
+  gap:20px;
+}
+
+.addTaskFormSubmit{
+  background-color: black;
+  color:white;
+  border:none;
+  width:80%;
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor:pointer;
+}
+
+.addTaskFormCancel{
+  background-color: white;
+  color:black;
+  border:1px solid #ccc;
+  width:20%;
+  height: 40px;
+  cursor:pointer;
+  border-radius: 10px;
+}
+
+.addTaskFormErrorMessage{
+  color:red;
+  font-weight: bolder;
+}
+
+.addTaskFormError{
+  border: 2px solid red !important;
 }
