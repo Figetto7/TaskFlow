@@ -6,11 +6,12 @@ import React, { useState } from "react";
 
 export default function Task({taskId, use}) {
   const [showModal, setShowModal] = useState(false);
-  const handleClick = () => {
-    if (use === "modify") {
-      setShowModal(true);
-    }
-  };
+  const handleClick = (e) => {
+  if (use === "modify") {
+    e.stopPropagation();
+    setShowModal(true);
+  }
+};
   const {tasks, toggleTaskCompletion} = useTaskContext();
   const task = tasks.find(t => t.id === taskId)
   return (

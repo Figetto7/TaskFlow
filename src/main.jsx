@@ -6,6 +6,9 @@ import Footer from "./Footer/Footer"
 import App from './App/App'
 import TaskContextProvider from "./Context/TaskContext"
 import './App/App.css'
+import Modal from "react-modal";
+
+Modal.setAppElement('#root'); // Set the app element for accessibility
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

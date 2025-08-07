@@ -38,6 +38,9 @@ function getTaskStyle (deadline, isCompleted, use) {
     if(isCompleted){
       return styles.modifyCompletedTask;
     } else {
+      if(getExpiredText(deadline, getCurrentDate())){
+        return styles.modifyExpiredTask;
+      }
       return styles.modifyTaskContainer;
     }
   }
