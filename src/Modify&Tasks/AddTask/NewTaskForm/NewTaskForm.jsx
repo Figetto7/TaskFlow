@@ -7,7 +7,7 @@ import { priorityOptions, categoryOptions } from "../../../Context/TestTasks";
 
 export default function NewTaskForm() {
   const { addTask } = useTaskContext();
-
+  const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
 
 
  const getCustomStyles = (hasError) => ({
@@ -54,16 +54,20 @@ export default function NewTaskForm() {
     }
     addTask(newTask);
     reset();
+    setShowSuccessMessage(true);
+    setTimeout(() => setShowSuccessMessage(false), 2000);
   };
 
   const hasError = Object.keys(errors).length > 0;
   
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.addTaskForm}>
-      <div style={{ display: 'flex', gap:' 40%', alignItems: 'center' }}>
-        <h2 className={styles.addTaskFormTitle}>Dettagli Task</h2>
-        {hasError && <span className={styles.addTaskFormErrorMessage}>I campi in rosso sono obbligatori</span>}
-      </div>
+    <>
+      {showSuccessMessage && <div className={styles.successMessage}>Task creato con successo, puoi visualizzarlo nella Home</div>}
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.addTaskForm}>
+        <div style={{ display: 'flex', gap:' 40%', alignItems: 'center' }}>
+          <h2 className={styles.addTaskFormTitle}>Dettagli Task</h2>
+          {hasError && <span className={styles.addTaskFormErrorMessage}>I campi in rosso sono obbligatori</span>}
+        </div>
       <p className={styles.addTaskFormSubtitle}>Compila tutti i dati necessari per creare il tuo nuovo task</p>
       <label htmlFor='titolo' className={styles.addTaskFormLabel}>Titolo *</label>
       <input {...register("titolo", { required: true })} placeholder=" Es. Completare presentazione progetto" id="titolo" 
@@ -118,7 +122,7 @@ export default function NewTaskForm() {
         <button type="submit" className={styles.addTaskFormSubmit}>Crea Task</button>
         <button type="button" className={styles.addTaskFormCancel} onClick={() => reset()}>Annulla</button>
       </div>
-      
     </form>
+  </>
   );
 }

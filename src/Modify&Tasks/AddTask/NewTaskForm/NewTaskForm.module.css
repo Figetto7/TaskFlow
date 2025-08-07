@@ -56,6 +56,7 @@
   height: 70px;      
   resize: none;       
   overflow-y: auto;
+  padding-top: 0.2rem;
 }
 
 .addTaskFormTextarea::placeholder{
@@ -95,4 +96,20 @@
 
 .addTaskFormError{
   border: 2px solid red !important;
+}
+
+.successMessage {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid darkgreen;
+  background-color: rgba(78, 163, 78, 0.229);
+  border-radius: 6px;
+  width:40rem;
+  height: 1.5rem;
+  align-items: center;
+  margin:auto;
+  margin-bottom: 1rem;
+  padding: auto;
+  justify-content: center;
 }
