@@ -1,6 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import styles from "./FiltriTask.module.css"
+import useDebouncedSearch from "./debouncingSearchBar";
 
 export default function FiltriTask ({ priorityFilter, setPriorityFilter, statusFilter, setStatusFilter, searchFilter, setSearchFilter }) {
   const priorityOptions = [
@@ -29,7 +30,11 @@ export default function FiltriTask ({ priorityFilter, setPriorityFilter, statusF
       }
     })
   } 
-
+  const [search , setSearch] = React.useState('');
+  const debouncedSearch = useDebouncedSearch(search, 300);
+  React.useEffect(() => {
+    setSearchFilter(debouncedSearch);
+  }, [debouncedSearch, setSearchFilter]);
 
   return (
     <div className={styles.filtersContainer}>
@@ -37,8 +42,8 @@ export default function FiltriTask ({ priorityFilter, setPriorityFilter, statusF
         className={styles.searchBar} 
         type="text" 
         placeholder="🔍 Cerca task..."
-        value={searchFilter}
-        onChange={(e) => setSearchFilter(e.target.value)}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
       <Select
       value={priorityOptions.find(option => option.value === priorityFilter)}
